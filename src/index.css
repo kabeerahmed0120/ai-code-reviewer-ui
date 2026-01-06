@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+/* index.css ya App.css ke end mein add karen */
+
+@layer utilities {
+  /* --- Firefox k liye --- */
+  .space-scrollbar {
+    scrollbar-width: thin; /* Patla scrollbar */
+    /* Thumb color (purple) aur Track color (transparent) */
+    scrollbar-color: #9333ea rgba(255, 255, 255, 0.1); 
+  }
+
+  /* --- Chrome, Edge, Safari k liye --- */
+  .space-scrollbar::-webkit-scrollbar {
+    width: 8px; /* Scrollbar ki chorai */
+  }
+
+  /* Track (Peeche ka hissa) - Transparent */
+  .space-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin-block: 10px; /* Thora upar niche gap */
+  }
+
+  /* Thumb (Pakad kar khenchne wala hissa) - Gradient */
+  .space-scrollbar::-webkit-scrollbar-thumb {
+    /* Blue se purple gradient */
+    background: linear-gradient(to bottom, #4f46e5, #9333ea);
+    border-radius: 10px;
+    /* Thora sa border de kar transparent karte hain taake patla lage */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* Hover karne par thora bright ho jaye */
+  .space-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(to bottom, #6366f1, #a855f7);
+  }
+}
