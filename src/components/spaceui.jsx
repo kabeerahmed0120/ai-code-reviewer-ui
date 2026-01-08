@@ -15,7 +15,7 @@ const SpaceUI = () => {
             if (!code) {
                 return alert("prompt is required");
             }
-            const res = await axios.post("http://localhost:3000/ai/review", { code });
+            const res = await axios.post("https://ai-code-reviewer-server-production.up.railway.app/ai/review", { code });
 
             setReview(res.data);
 
